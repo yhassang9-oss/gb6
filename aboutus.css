@@ -1,0 +1,189 @@
+/* ------------------- General Reset ------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fdfdfd;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ------------------- Main Container ------------------- */
+.overlay-text {
+  display: flex;
+  min-height: 100vh; /* full viewport height */
+}
+
+/* ------------------- Left Image Section ------------------- */
+#image-section {
+  position: relative;
+  flex: none;           /* don’t stretch full half, only wrap the image */
+  display: inline-block;
+}
+
+#about-img {
+  width: 600px;         /* fixed size for desktop */
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1); /* zoom effect */
+  display: block;       /* prevent inline spacing issues */
+}
+
+/* Black translucent overlay */
+#image-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 630px;          /* match parent width */
+  height: 890px;         /* match parent height */
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: none; /* allow clicks through */
+}
+
+/* Text Section (overlayed on image) */
+#text-section {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  color: #fff;
+  max-width: 450px;
+  z-index: 2;
+}
+
+#text-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+#text-section p {
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+  color: #eaeaea;
+}
+
+/* ------------------- Right Half ------------------- */
+#info-section {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
+
+#info-section h2 {
+  font-size: 3em;
+  color: #1e1e1e;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+#info-section h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #0078d7;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+#info-section p {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+  color: #444;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* ------------------- Mobile (max 480px) ------------------- */
+@media (max-width: 480px) {
+  /* Main container */
+  .overlay-text {
+    display: flex;
+    flex-direction: row;   /* image left, text/info right */
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  /* Image Section */
+  #image-section {
+    flex: 1 1 50%;   
+    position: relative;  /* so overlay text can sit on top */
+    width: 50%;
+    height: auto;
+    min-height: 100vh;   /* always fills screen height */
+    overflow: hidden;
+  }
+
+  #about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none;
+    display: block;
+  }
+
+  /* Black translucent overlay */
+  #image-section::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+  }
+
+  /* Text Overlay inside the image */
+  #text-section {
+    position: absolute;
+    top: 50%;
+    left: 10%;   /* slightly inset from left */
+    transform: translateY(-50%);
+    width: 80%;
+    text-align: left;
+    color: #fff;
+    z-index: 2;
+    font-size: 1rem;
+  }
+
+  #text-section h1 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  #text-section p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* Info Section (on the right side) */
+  #info-section {
+    flex: 1 1 50%;
+    padding: 25px 15px;
+    text-align: left;
+    background: #fff;
+  }
+
+  #info-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  #info-section p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    color: #444;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diibo Goan Burah Contacts</title>
+<link rel="stylesheet" href="information.css">
+</head>
+<body>
+    <div id="container">
+        <img src="images/LOGO.jpg" id="LOGO">
+        
+        <!-- Search bar -->
+        <input type="text" id="searchBar" placeholder="Search by name or number...">
+
+        <!-- Combined Contacts list -->
+        <ul id="contacts">
+            <li>DUTTA - Shri Hiinyo Guro, GB - </li>
+            <li>DUTTA - Smt. Hiinyo Yasse, GB - 8257944980</li>
+            <li>DUTTA - Smt. Koj Mumpa, GB - 7640855673</li>
+            <li>DUTTA - Smt. Koj Oche, HGB - 8575289799 / 8259829056</li>
+            <li>DUTTA - Shri Koj Tade, GB - 9774629648</li>
+            <li>DUTTA - Shri Koj Taki, GB - 9774095530</li>
+            <li>DUTTA - Shri Koj Tari, GB - </li>
+            <li>DUTTA - Shri Koj Koyang, GB - </li>
+            <li>DUTTA - Smt. Koj Rinyo, GB - 9774911758</li>
+            <li>DUTTA - Smt. Koj Yamang, GB - 8257814140</li>
+            <li>DUTTA - Smt. Mobia Choku, HGB - 8575376248</li>
+
+            <li>MUDANG TAGE - Shri Buru Butang, GB - </li>
+            <li>MUDANG TAGE - Smt Buru Yassung, GB - 9862937985</li>
+            <li>MUDANG TAGE - Shri Leegang Taji, GB - 7640982996 (Hapoli)</li>
+            <li>MUDANG TAGE - Shri Mudang Challo, GB - 9856606096</li>
+            <li>MUDANG TAGE - Shri Mudang Pai, HGB - 7629933684 (Biirii)</li>
+            <li>MUDANG TAGE - Shri Mudang Tani, HGB - 8119889957</li>
+            <li>MUDANG TAGE - Smt Mudang Rinyo, GB - 9774101162</li>
+            <li>MUDANG TAGE - Smt Mudang Yam, GB - 8259843757 (Hapoli)</li>
+            <li>MUDANG TAGE - Shri Tage Pai, GB - </li>
+            <li>MUDANG TAGE - Shri Tage Tagyang, HGB - 7641022487 (Hapoli)</li>
+            <li>MUDANG TAGE - Smt Tage Yassung, GB - 7629820434</li>
+            <li>MUDANG TAGE - Smt Tage Yatung, GB - 9362351778</li>
+            <li>MUDANG TAGE - Smt Tadu Mayu, GB - 8575959903</li>
+            <li>MUDANG TAGE - Smt Tadu Yassung, GB - 9774122301</li>
+            <li>MUDANG TAGE - Shri Tadu Yarang, GB - 8014519004</li>
+
+            <li>BAMIN-MICHI - Shri Bamin Dogin, GB - </li>
+            <li>BAMIN-MICHI - Smt Dulley Yalyo, GB - 9615428226 (Hapoli)</li>
+            <li>BAMIN-MICHI - Shri Dulley Tallo, HGB - 9233644617 (Hapoli)</li>
+            <li>BAMIN-MICHI - Shri Dulley Uja, GB - 9383385833</li>
+            <li>BAMIN-MICHI - Shri Hano Tade, HGB - 8014532781 (Hapoli)</li>
+            <li>BAMIN-MICHI - Shri Michi Taker, HGB - 9233644646</li>
+            <li>BAMIN-MICHI - Smt Michi Ampi, HGB - 8014012354</li>
+            <li>BAMIN-MICHI - Shri Roto Tago, GB - 8014013732 (Hapoli)</li>
+            <li>BAMIN-MICHI - Shri Tamo Chobing, HGB - </li>
+            <li>BAMIN-MICHI - Shri Tamo Ruja, GB - </li>
+            <li>BAMIN-MICHI - Smt Tanyang Yatung, GB - 8798961535 (Hapoli)</li>
+            <li>BAMIN-MICHI - Shri Tilling Apo, GB - </li>
+            <li>BAMIN-MICHI - Shri Tilling Morth, HGB - 8730853800</li>
+        </ul>
+    </div>
+
+    <!-- JavaScript for search -->
+    <script>
+        const searchBar = document.getElementById('searchBar');
+        const contacts = document.getElementById('contacts');
+
+        searchBar.addEventListener('input', function() {
+            const filter = this.value.toLowerCase();
+            const lists = contacts.querySelectorAll('li');
+            lists.forEach(li => {
+                if (li.textContent.toLowerCase().includes(filter)) {
+                    li.style.display = '';
+                } else {
+                    li.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

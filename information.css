@@ -1,0 +1,106 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    min-height: 100vh;
+    gap: 30px;
+}
+
+/* Logo */
+#LOGO {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+   
+}
+
+/* Search Bar */
+#searchBar {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#searchBar:focus {
+    border-color: #800000;
+    box-shadow: 0 0 8px rgba(160,0,0,0.3);
+}
+
+/* Contact List */
+#contacts {
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 20px;
+    list-style: none;
+}
+
+#contacts li {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+    color: #333;
+}
+
+#contacts li:last-child {
+    border-bottom: none;
+}
+
+/* Highlight Village Names */
+#contacts li::before {
+    content: attr(data-village);
+    font-weight: 700;
+    color: #a60000;
+    margin-right: 5px;
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    #container {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    #LOGO {
+        width: 100px;
+    }
+
+    #searchBar {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+
+    #contacts {
+        padding: 15px;
+    }
+
+    #contacts li {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+}
