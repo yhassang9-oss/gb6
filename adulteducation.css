@@ -1,0 +1,212 @@
+#adult-education {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ffffff, #ffffff); /* Vibrant gradient background */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh; /* Full viewport height for impact */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#adult-education::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+#adult-education h2 {
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+  animation: fadeInDown 1s ease-out;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background: linear-gradient(45deg, #ff0000, #ffffff); /* Popping hover gradient */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+.gallery-item p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.gallery-item:hover p {
+  color: #fff; /* White text on hover for contrast */
+}
+
+@media (max-width: 480px) {
+  #adult-education {
+    padding: 40px 10px;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4); /* Match desktop's vibrant gradient */
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh; /* Full viewport height for immersive feel */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  #adult-education::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  #adult-education h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+    animation: fadeInDown 1s ease-out;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr; /* One image per row */
+    justify-items: center; /* Center items */
+    gap: 20px;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%; /* Ensure it fits viewport */
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    position: relative;
+    z-index: 1;
+  }
+
+  .gallery-item {
+    width: 100%;
+    max-width: 300px; /* Cap width */
+    aspect-ratio: 3 / 2; /* Maintain aspect ratio */
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent;
+    animation: fadeInUp 0.8s ease-out; /* Add animation for gallery items */
+  }
+
+  .gallery-item:hover {
+    border-color: #ff6b6b; /* Vibrant border on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    background: linear-gradient(45deg, #f3ec78, #af4261); /* Match desktop hover gradient */
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05); /* Subtle zoom on hover */
+  }
+
+  .gallery-item p {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+
+  .gallery-item:hover p {
+    color: #fff; /* White text on hover for contrast */
+  }
+}
+
+/* Keyframe animations for added flair */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
