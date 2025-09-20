@@ -9,6 +9,20 @@
 </head>
 
 <body>
+    <header id="headerdiv">
+    <img src="images/LOGO.jpg" id="indexlogo" alt="Logo">
+
+    <!-- Hamburger button (only shows on mobile) -->
+    <div id="menu-toggle">&#9776;</div>
+
+    <nav id="navmenu">
+      <a href="aboutus.html" class="btn">About Us</a>
+      <a href="adulteducation.html" class="btn">Adult Education</a>
+      <a href="information.html" class="btn">GB Information</a>
+      <a href="news.html" class="btn">News</a>
+      <a href="index.html" class="btn">Home</a>
+    </nav>
+  </header>
     <div class="overlay-text">
       <div id="image-section">
     <img src="images/p1.JPG" alt="About Us Image" id="about-img">
@@ -33,5 +47,25 @@
 
 
     </div>
+    <script>
+// Hamburger toggle
+const hamburger = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('navmenu');
+
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  navMenu.classList.toggle('show');
+  hamburger.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+  if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+    navMenu.classList.remove('show');
+    hamburger.classList.remove('active');
+  }
+});
+
+
+</script>
 </body>
 </html>
