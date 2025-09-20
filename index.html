@@ -8,74 +8,99 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header id="headerdiv">
+<header id="headerdiv">
     <img src="images/LOGO.jpg" id="indexlogo" alt="Logo">
-    <nav>
-      <a href="aboutus.html" class="btn">About Us</a><a href="./adulteducation.html" class="btn">Adult Education</a>
- <a href="information.html" class="btn">GB Information</a><a href="news.html" class="btn">News</a>
-    </nav>
 
-   
-  </header>
+    <!-- Hamburger Menu for Mobile -->
+    <button id="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="navmenu">
+      <a href="aboutus.html" class="btn">About Us</a>
+      <a href="adulteducation.html" class="btn active">Adult Education</a>
+      <a href="information.html" class="btn">GB Information</a>
+      <a href="news.html" class="btn">News</a>
+    </nav>
+</header>
 
   <!-- Banner -->
   <section id="homepageimg1">
     <picture>
-  <!-- For phones -->
-  <source srcset="images/IMG_20250826_154101.jpg" media="(max-width: 480px)">
-  
-  <!-- For tablets -->
-  <source srcset="images\IMG_20250826_154101.jpg" media="(max-width: 768px)">
-
-  <!-- Default (desktop) -->
-  <img src="images/banner 1.jpg" alt="Logo" id="homepageimg1">
-</picture>
+      <!-- For phones -->
+      <source srcset="images/IMG_20250826_154101.jpg" media="(max-width: 480px)">
+      <!-- For tablets -->
+      <source srcset="images/IMG_20250826_154101.jpg" media="(max-width: 768px)">
+      <!-- Default (desktop) -->
+      <img src="images/banner 1.jpg" alt="Banner" id="homepageimg1">
+    </picture>
 
     <div class="overlay-text">
       <h1>DIIBO GOAN BURAH</h1>
-     <p class="formatted">
- Diibo is a group of villages 
- where the traditional village heads,  
- known as Goan Burahs, 
- play an important role.
-</p>
-
+      <p class="formatted">
+        Diibo is a group of villages 
+        where the traditional village heads,  
+        known as Goan Burahs, 
+        play an important role.
+      </p>
     </div>
   </section>
    
   <!-- Activities -->
-  
-    <h2 id="h12">Activities</h2>
+  <h2 id="h12">Activities</h2>
 
-    <div id="activity1">
-  <img id="A1" src="images/ae2.jpg" alt="Activity Image">
-  
-  <div class="activity-content">
-    <h2>Activity Title</h2>
-    <p>
-      This is a description about the activity.  
-      Keep it short, clean, and engaging to make the block look more professional.
-    </p>
-    </div>
-    
-  </div>
-  <div id="activity1">
-    <img id="A1" src="images/ae4.jpg">
+  <div class="activity-card">
+    <img class="activity-img" src="images/ae2.jpg" alt="Activity Image" id="A1">
     <div class="activity-content">
-    <h2>Activity Title</h2>
-    <p>
-      This is a description about the activity.  
-      Keep it short, clean, and engaging to make the block look more professional.
-    </p>
-    
+      <h2>Activity Title</h2>
+      <p>This is a description about the activity. Keep it short, clean, and engaging to make the block look more professional.</p>
+    </div>
   </div>
- 
-    
-  
+
+  <div class="activity-card">
+    <img class="activity-img" src="images/ae4.jpg" alt="Activity Image" id="A2">
+    <div class="activity-content">
+      <h2>Activity Title</h2>
+      <p>This is a description about the activity. Keep it short, clean, and engaging to make the block look more professional.</p>
+    </div>
+  </div>
+
+  <!-- Former Goan Burahs Section -->
+  <!-- Former Goan Burahs / Links Section -->
+<div class="Links-container">
+  <a href="adulteducation.html" target="_blank">
+    <img src="images/AELOGO.png" alt="Adult Education" id="link1">
+  </a>
+  <a href="memorial.html" target="_blank">
+    <img src="images/Memorial.jpg" alt="Other Link 1">
+  </a>
+  <a href="aboutus.html" target="_blank">
+    <img src="images/aboutus.jpg" alt="Other Link 2" id="link3">
+  </a>
+  <a href="information.html" target="_blank">
+    <img src="images/info.png" alt="Other Link 3">
+  </a>
+</div>
+
+  <!-- JS for Hamburger -->
+  <script>
+const toggleBtn = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("navmenu");
+
+// Toggle menu
+toggleBtn.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});
+
+// Close menu when clicking outside
+document.addEventListener("click", (e) => {
+  if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+    navMenu.classList.remove("show");
+  }
+});
+</script>
+
 </body>
-
 </html>
-
-
-
